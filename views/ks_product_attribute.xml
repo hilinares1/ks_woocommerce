@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Action for Updating Product Attributes to Woo-->
+    <record id="ks_export_woocommerce_product_attribute" model="ir.actions.server">
+        <field name="name">Export/Update Attributes</field>
+        <field name="model_id" ref="model_product_attribute"/>
+        <field name="binding_model_id" ref="model_product_attribute"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_attribute_to_woo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_import_woocommerce_product_attribute" model="ir.actions.server">
+        <field name="name">Import Attributes</field>
+        <field name="model_id" ref="model_product_attribute"/>
+        <field name="binding_model_id" ref="model_product_attribute"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_attribute_to_odoo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_form_woocommerce_product_attribute" model="ir.ui.view">
+        <field name="name">woocommerce.product.attribute.form</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.product_attribute_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main_fields']" position="after">
+                <group>
+                <div name="button_box" class="oe_button_box">
+                <field name="ks_sync_status" invisible="1"/>
+                        <button name="" class="oe_stat_button" disabled="True"
+                                attrs="{'invisible': [('ks_sync_status', '=', False)]}" icon="fa-check text-success">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Synchronised</span>
+                                <span class="o_stat_text">With Woo</span>
+                            </div>
+                        </button>
+                <button name="" class="oe_stat_button" disabled="True"
+                        attrs="{'invisible': [('ks_sync_status', '=', True )]}" icon="fa-times-circle text-danger">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">UnSynchronised</span>
+                        <span class="o_stat_text">With Woo</span>
+                    </div>
+                </button>
+            </div>
+                </group>
+                <group name="woo_info" string="WooCommerce Information" groups="ks_woocommerce.ks_woocommerce_group">
+                    <field name="ks_slug"/>
+                    <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_export_in_wo','!=',False)]}"/>
+                    <field name="ks_woo_id"/>
+                    <field name="ks_export_in_wo" readonly="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//form" position="inside">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_tree_woocommerce_product_attribute" model="ir.ui.view">
+        <field name="name">woocommerce.product.attribute.tree</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.attribute_tree_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='create_variant']" position="after">
+                <field name="ks_woo_instance_id"/>
+                <field name="ks_woo_id" readonly="1"/>
+                <field name="ks_export_in_wo" readonly="1"/>
+                <field name="ks_sync_status" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="ks_slug"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_product_attribute_search_view" model="ir.ui.view">
+        <field name="name">ks.product.attribute.search</field>
+        <field name="model">product.attribute</field>
+        <field name="arch" type="xml">
+            <search string="Product">
+                <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                <field name="ks_slug" string="Woo Slug" filter_domain="[('ks_slug','ilike',self)]"/>
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_woocommerce_product_attribute">
+        <field name="name">WooCommerce Attributes</field>
+        <field name="res_model">product.attribute</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_id','&gt;',0)]</field>
+        <field name="context">{'tree_view_ref': 'ks_woocommerce.ks_tree_woocommerce_product_attribute'}</field>
+    </record>
+
+
+    <menuitem id="menu_ks_woocomerce_product_attribute"
+              name="Attributes"
+              parent="menu_ks_woocomerce_products"
+              action="action_woocommerce_product_attribute"
+              sequence="2"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+</odoo>

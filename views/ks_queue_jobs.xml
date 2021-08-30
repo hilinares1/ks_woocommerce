@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--Form View for WooCommerce Instance-->
+    <record model="ir.ui.view" id="ks_queue_jobs_form_view">
+        <field name="name">ks.woo.queue.jobs.form.view</field>
+        <field name="model">ks.woo.queue.jobs</field>
+        <field name="arch" type="xml">
+            <form string="WooCommerce Instance" create="0" edit="0">
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1" readonly="1"/>
+                    <button name="ks_process_queue_jobs" string="Process Record" type="object" states="new,failed"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ks_name" placeholder="Instance Name"/>
+                        </h1>
+                    </div>
+                    <group name="instance_info">
+                        <group>
+                            <field name="ks_model"/>
+                            <field name="ks_woo_id" />
+                            <field name="ks_record_id"/>
+                            <field name="ks_instance_id"/>
+                        </group>
+                        <group>
+                            <field name="ks_operation"/>
+                            <field name="ks_type"/>
+                            <field name="create_date"/>
+                        </group>
+                    </group>
+                    <field name="ks_data"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree View for WooCommerce Instance-->
+    <record model="ir.ui.view" id="ks_queue_jobs_tree_view">
+        <field name="name">ks.woo.queue.jobs.tree.view</field>
+        <field name="model">ks.woo.queue.jobs</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0" decoration-success="state=='done'" decoration-info="state=='progress'"
+                  decoration-danger="state=='failed'" decoration-warning="state=='new'">
+                <field name="ks_name"/>
+                <field name="ks_woo_id"/>
+                <field name="ks_model"/>
+                <field name="ks_operation"/>
+                <field name="ks_type"/>
+                <field name="ks_instance_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+ <!--Window Queue job search menu-->
+    <record model="ir.ui.view" id="ks_queue_jobs_search_view">
+        <field name="name">ks.woo.queue.jobs.search.view</field>
+        <field name="model">ks.woo.queue.jobs</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ks_name"/>
+                <field name="ks_woo_id"/>
+                <field name="ks_model"/>
+                <field name="ks_operation"/>
+                <field name="ks_type"/>
+                <field name="ks_instance_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Window Action for WooCommerce Instance-->
+    <record model="ir.actions.act_window" id="ks_queue_jobs_action">
+        <field name="name">WooCommerce Queue Jobs</field>
+        <field name="res_model">ks.woo.queue.jobs</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ks_queue_jobs_menu"
+              name="Queue Jobs"
+              parent="menu_ks_woocomerce_base"
+              sequence="1"
+              action="ks_queue_jobs_action"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+</odoo>

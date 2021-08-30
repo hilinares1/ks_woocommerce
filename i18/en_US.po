@@ -1,0 +1,2152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ks_woocommerce
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-16 06:57+0000\n"
+"PO-Revision-Date: 2019-10-16 06:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ks_woocommerce
+#: model_terms:ir.actions.act_window,help:ks_woocommerce.action_dashboard_woocommerce_instance
+msgid "\" WooCommerce &gt; Configuration &gt; Instances \""
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/coupon/create"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/coupon/update"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/customer/create"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/customer/update"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/order/create"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/order/update"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/product/create"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/product/update"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "/woo_hook/"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_wc_version:0
+msgid "2.6.x or later"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_wc_version:0
+msgid "3.0.x or later"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_wc_version:0
+msgid "3.5.x or later"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "<span class=\"o_stat_text\">Average Rating</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "<span class=\"o_stat_text\">On WooCommerce</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "<span style=\"padding-right: 27px;\" groups=\"ks_woocommerce.ks_woocommerce_group\"><b>Length</b></span>\n"
+"                            <span style=\"padding-right: 29px;\" groups=\"ks_woocommerce.ks_woocommerce_group\"><b>Width</b></span>\n"
+"                            <span groups=\"ks_woocommerce.ks_woocommerce_group\"><b>Height</b></span><br/>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "<span>Operation</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "<span>kg</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "<span>m³</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Accounting"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_instance_state:0
+msgid "Active"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Active Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.actions.act_window,help:ks_woocommerce.action_dashboard_woocommerce_instance
+msgid "Add a new WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_free_shipping
+msgid "Allow Free Shipping"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_allowed_email
+msgid "Allowed emails"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_amount
+msgid "Amount"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Attribute"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_product_attribute_value
+msgid "Attribute Value"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Attribute Values"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_product_attribute
+msgid "Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auto_import_order
+msgid "Auto Import Order?"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auto_import_product
+msgid "Auto Import Product?"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auto_update_order_status
+msgid "Auto Update Order Status?"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auto_update_stock
+msgid "Auto Update Product Stock?"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Automatic Jobs"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_average_rating
+msgid "Average Rating: Average rating for the product on WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_sale_order_form_view
+msgid "Cancel in WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:sale.order,ks_woo_status:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_product_category
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Category"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_message_wizard
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Close"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__color
+msgid "Color"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_company
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_company
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_company
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_company
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_company
+msgid "Company"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_woo_states:0
+#: selection:sale.order,ks_woo_status:0
+msgid "Completed"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_configuration
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "Configuration"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_confirm_shipment
+msgid "Confirm Shipment"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Connect Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_instance_state:0
+msgid "Connected"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_operation_type:0
+msgid "Connection"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Coupon"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_coupon_code
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_tree
+msgid "Coupon Code"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_count_coupons
+msgid "Coupon Count"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Coupon Created<span style=\"padding-left:26px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Coupon Updated<span style=\"padding-left:22px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_coupon_search_view
+msgid "Coupon code"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_coupons
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "Coupons"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_operation_type:0
+msgid "Create"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_create_invoice
+msgid "Create Invoice"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_date_created
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_date_created
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_date_created
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_date_created
+msgid "Created On"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_ks_woo_coupon__ks_date_created
+msgid "Created On: Date on which the WooCommerce Coupon has been created"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_res_partner__ks_date_created
+msgid "Created On: Date on which the WooCommerce Customer has been created"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_date_variant_created
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_date_created
+msgid "Created On: Date on which the WooCommerce Product has been created"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_sale_order__ks_date_created
+msgid "Created On: Date on which the WooCommerce Sale Order has been created"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__create_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__create_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_currency
+msgid "Currency"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Customer"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_count_customers
+msgid "Customer Count"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Customer Created<span style=\"padding-left:13px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_customer_key
+msgid "Customer Key"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Customer Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_customer_secret
+msgid "Customer Secret"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Customer Updated<span style=\"padding-left:8px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_res_partner
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "Customers"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_dashboard
+msgid "Dashboard"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_date
+msgid "Date"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_instance_state:0
+msgid "Deactivate"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Deactivate Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_picking_policy:0
+msgid "Deliver all products at once"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_picking_policy:0
+msgid "Deliver each product when available"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_delivery
+msgid "Delivery"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Delivery URL"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_description
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_description
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_description
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_woo_variant_description
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_woo_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_payment_gateway_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_tags_form
+msgid "Description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_woo_variant_description
+msgid "Description: An optional description for \n"
+"                                                                           this wooCommerce product variant"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_discount_type
+msgid "Discount Type"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__display_name
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_odoo_state:0
+msgid "Done"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.instances,ks_instance_state:0
+#: selection:ks.woocommerce.status,ks_set_invoice_state:0
+msgid "Draft"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_exclude_categories
+msgid "Exclude Product Categories"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_exclude_product_ids
+msgid "Exclude Products"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_exclude_sale_items
+msgid "Exclude Sale Items"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Execute"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_expiry_date
+msgid "Expiry Date"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_update_woocommerce_partner
+msgid "Export & Update Customers "
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_export_woocommerce_order
+msgid "Export Order"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_export_woocommerce_product_attribute
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_attributes
+msgid "Export/Update Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_category
+msgid "Export/Update Categories"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_export_woocommerce_product_category
+msgid "Export/Update Category"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_update_woocommerce_coupon
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_coupons
+msgid "Export/Update Coupons"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_customers
+msgid "Export/Update Customers"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_export_woocommerce_products
+msgid "Export/Update Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_products
+msgid "Export/Update Products"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_update_woocommerce_product_tag
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_tags
+msgid "Export/Update Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_tax__ks_export_in_wo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_exported_in_woo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_category__ks_export_in_woo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_exported_in_woo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_export_in_wo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_exported_in_woo
+msgid "Exported in Woo"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_account_tax__ks_export_in_wo
+msgid "Exported in Woo: If enabled, the Woo Tax is synced with the specified \n"
+"                                        WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_res_partner__ks_export_in_wo
+msgid "Exported in Woo: If enabled, the customer is synced with the specified \n"
+"                                            WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_category__ks_export_in_woo
+msgid "Exported in Woo: If enabled, the product is synced with the specified \n"
+"                                                    WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_variant_exported_in_woo
+msgid "Exported in Woo: If enabled, the product is synced with the specified \n"
+"                                                WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_sale_order__ks_exported_in_woo
+msgid "Exported in Woo: If enabled, the product is synced with the specified \n"
+"                                            WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_exported_in_woo
+msgid "Exported in Woo: If enabled, the product is synced with the specified \n"
+"                                        WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_export_in_woo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_export_in_woo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute__ks_export_in_wo
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute_value__ks_export_in_wo
+msgid "Exported in woo"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_attribute_price_extra
+msgid "Extra Price For Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_attribute_price_extra
+msgid "Extra Price For Attributes: Extra price for the variant with \n"
+"                                            respective of attributes price the sale price.\n"
+" \n"
+"                                            eg. 200 extra price for attributes, 1000 + 200 = 1200. "
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_variant_extra_price
+msgid "Extra Price for variant (Irrespective of Attributes Price)"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_variant_extra_price
+msgid "Extra Price for variant: Extra price for the variant with \n"
+"                                          irrespective of attributes extra price the sale price.\n"
+" \n"
+"                                          eg. 100 extra price for variant, 2000[base price + attributes extra price] + \n"
+"                                          100 = 2100. "
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_status:0
+msgid "Failed"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_operation_type:0
+msgid "Fetch"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.coupon,ks_discount_type:0
+msgid "Fixed Cart Discount"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.coupon,ks_discount_type:0
+msgid "Fixed Product Discount"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:res.groups,name:ks_woocommerce.ks_woocommerce_group
+msgid "Full Access"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_product_image_ids
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "Gallery Images"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_product_image_ids
+msgid "Gallery Images: This includes all the images for the synced product\n"
+"                                                 including the display image."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+msgid "General"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_account_tax_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_category_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_res_partner_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_coupon_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_payment_gateway_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:product.template,ks_woo_product_type:0
+msgid "Grouped Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "Height"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__id
+msgid "ID"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_ks_woocommerce_instances__ks_picking_policy
+msgid "If you deliver all products at once, the delivery order will be scheduled based on the greatest product lead time. Otherwise, it will be based on the shortest."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_image
+msgid "Image"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_file_name
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_image_form
+msgid "Image Name"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Implementing Webhook for this WooCommerce Instance use these following Delivery URLs:"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_orders
+msgid "Import Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_individual_use
+msgid "Individual Use"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_woo_instance_id
+msgid "Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Instance Name"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_instances
+msgid "Instances"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "Internal Reference/SKU"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_invoices
+msgid "Invoices"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aio_cron_id
+msgid "Ks Aio Cron"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aip_cron_id
+msgid "Ks Aip Cron"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auos_cron_id
+msgid "Ks Auos Cron"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aus_cron_id
+msgid "Ks Aus Cron"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_average_rating
+msgid "Ks Average Rating"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_base_url
+msgid "Ks Base Url"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_height
+msgid "Ks Height"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_import_order_state_config
+msgid "Ks Import Order State Config"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_instance_id
+msgid "Ks Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_instance_connected
+msgid "Ks Instance Connected"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_length
+msgid "Ks Length"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_order_prefix
+msgid "Ks Order Prefix"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_product_tmpl_id
+msgid "Ks Product Tmpl"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_width
+msgid "Ks Width"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_description
+msgid "Ks Woo Description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_fee_charges
+msgid "Ks Woo Fee Charges"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_product_has_variant
+msgid "Ks Woo Product Has Variant"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_short_description
+msgid "Ks Woo Short Description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_variant_count
+msgid "Ks Woo Variant Count"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_visible_attributes
+msgid "Ks Woo Visible Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances____last_update
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_auos_cron_last_updated
+msgid "Last Updated [Order Status]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aus_cron_last_updated
+msgid "Last Updated [Product Stock]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aip_cron_last_updated
+msgid "Last Updated [Product]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_aio_cron_last_updated
+msgid "Last Updated [Sale Order]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__write_uid
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__write_date
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "Length"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_limit_usage_to_x_items
+msgid "Limit usage to X items"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "Logistics"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_log
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "Logs"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_maximum_amount
+msgid "Maximum Spend"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_message_wizard__name
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_message_wizard
+msgid "Message"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_description
+msgid "Message displayed as product description on WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_short_description
+msgid "Message displayed as product short description on WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_message_wizard
+msgid "Message wizard to display warnings, alert ,success messages"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_minimum_amount
+msgid "Minimum Spend"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_name
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+msgid "Name"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_woo_variant_final_price
+msgid "Odoo Variant sale price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_final_price
+msgid "Odoo sale price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_odoo_state
+msgid "Odoo state"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+#: selection:ks.woo.sync.log,ks_operation:0
+msgid "Odoo to Woo"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:sale.order,ks_woo_status:0
+msgid "On-Hold"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_woo_states:0
+msgid "On-hold"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_set_invoice_state:0
+msgid "Open"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_operation
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+msgid "Operation"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_status
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+msgid "Operation Status"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_operation_type
+msgid "Operation Type"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_operations
+msgid "Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_count_orders
+msgid "Order Count"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Order Created<span style=\"padding-left:41px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Order Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Order State Configuration"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Order Updated<span style=\"padding-left:37px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_order
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_orders
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Other Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_set_invoice_state:0
+msgid "Paid"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Payment Gateway"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_payment_gateways
+msgid "Payment Gateways"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_journal_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_journal_id
+msgid "Payment Method"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_woo_pg_id
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_payment_gateway_search_view
+msgid "Payment code"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_account_payment
+msgid "Payments"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_woo_states:0
+#: selection:sale.order,ks_woo_status:0
+msgid "Pending"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.coupon,ks_discount_type:0
+msgid "Percentage Discount"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_woo_states:0
+#: selection:sale.order,ks_woo_status:0
+msgid "Processing"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_product_product
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_product_templates
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_coupon_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_payment_gateway_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_product_attribute
+msgid "Product Attribute"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_include_categories
+msgid "Product Categories"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_product_category
+msgid "Product Category"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_count_products
+msgid "Product Count"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Product Created<span style=\"padding-left:27px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Product Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Product Updated<span style=\"padding-left:24px; padding-right:39px;\">----&gt;</span>"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_product_product
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Product Variant"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_include_product_ids
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_products
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "Products"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_publish_products
+msgid "Publish Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woocommerce.status,ks_odoo_state:0
+msgid "Quotation"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:sale.order,ks_woo_status:0
+msgid "Refunded"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_sale_order
+#: selection:ks.woocommerce.status,ks_odoo_state:0
+msgid "Sale Order"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_sales_person
+msgid "Sales Person"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_sales_team
+msgid "Sales Team"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+msgid "Separate email addresses with commas(,)"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_set_invoice_state
+msgid "Set Invoice state"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_picking_policy
+msgid "Shipping Policy"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "Short Description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:product.template,ks_woo_product_type:0
+msgid "Simple Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_slug
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute__ks_slug
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute_value__ks_slug
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_category__ks_slug
+msgid "Slug"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Stock"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_stock_field_type
+msgid "Stock Field Type"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_status:0
+msgid "Success"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_message
+msgid "Summery"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_sync
+msgid "Sync"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_attributes
+msgid "Sync Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_product_category
+msgid "Sync Category"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_coupons
+msgid "Sync Coupons"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_customers
+msgid "Sync Customers"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_payment_gateways
+msgid "Sync Payment Gateway"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_products
+msgid "Sync Products"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_product_tags
+msgid "Sync Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "System Status"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_product_tags
+#: selection:ks.woo.sync.log,ks_type:0
+msgid "Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_account_tax
+msgid "Tax"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "This note will show up on product description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "This note will show up on product short description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_tags_form
+msgid "This note will show up on product tag description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_payment_gateway__ks_title
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_payment_gateway_search_view
+msgid "Title"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_to_be_export
+msgid "To be export on WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+msgid "Today Created Woo Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+msgid "Today Created Woo Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_search_view
+msgid "Today Created Woo Product Variant"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+msgid "Today Logs"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+msgid "Today Updated Woo Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+msgid "Today Updated Woo Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_search_view
+msgid "Today Updated Woo Product Variant"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Topic"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_type
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+msgid "Type"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:product.product,uom_name:ks_woocommerce.ks_woo_fees
+#: model:product.product,uom_name:ks_woocommerce.ks_woo_shipping_fees
+#: model:product.template,uom_name:ks_woocommerce.ks_woo_fees_product_template
+#: model:product.template,uom_name:ks_woocommerce.ks_woo_shipping_fees_product_template
+msgid "Unit(s)"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_unpublish_products
+msgid "Unpublish Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:ks.woo.sync.log,ks_operation_type:0
+msgid "Update"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_update_false
+msgid "Update False"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.server,name:ks_woocommerce.ks_update_woocommerce_order
+msgid "Update Order Status"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_order_status
+msgid "Update Order status"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_update_stock
+msgid "Update Stock"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_date_updated
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_date_updated
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_date_updated
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_date_updated
+msgid "Updated On"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_ks_woo_coupon__ks_date_updated
+msgid "Updated On: Date on which the WooCommerce Coupon has been last updated"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_date_variant_updated
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_date_updated
+msgid "Updated On: Date on which the WooCommerce Product has been last updated"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_sale_order__ks_date_updated
+msgid "Updated On: Date on which the WooCommerce Sale Order has been last updated"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_res_partner__ks_date_updated
+msgid "Updated On: Date on which the WooCommerce customer has been last updated"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+msgid "Usage Limits"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+msgid "Usage Restriction"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_usage_limit
+msgid "Usage limit per coupon"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_usage_limit_per_user
+msgid "Usage limit per user"
+msgstr ""
+
+#. module: ks_woocommerce
+#: selection:product.template,ks_woo_product_type:0
+msgid "Variable Product"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_date_variant_created
+msgid "Variant Created On"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_variant_exported_in_woo
+msgid "Variant Exported in Woo"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_final_variant_extra_price
+msgid "Variant Final Extra Price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_final_variant_extra_price
+msgid "Variant Final Extra Price: Final variant extra price that \n"
+"                                                includes variant extra price and attributes extra price for that \n"
+"                                                product variant. "
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_date_variant_updated
+msgid "Variant Updated On"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "Variants"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_verify_ssl
+msgid "Verify SSL"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "Volume"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_sync_all_w2o
+msgid "Want to perform all the tasks?"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_warehouse
+msgid "Warehouse"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "Webhooks"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+msgid "Weights"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_volume_calculation_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_view_product_template_volume
+msgid "Width"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_categories
+msgid "Woo Categories"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_categories
+msgid "Woo Categories: If this field is empty, then no category will be \n"
+"                                         exported on woo. \n"
+" [This will include the the category you selected on the \n"
+"                                         general information tab for the product]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_tag
+msgid "Woo Categories: If this field is empty, then no category will be \n"
+"                                   exported on woo."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_customer
+msgid "Woo Customer"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_category__ks_woo_description
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_easy_edit_woo_form_view
+msgid "Woo Description"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_fees
+msgid "Woo Fees"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_tax__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_category__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_id
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_account_tax_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_category_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_res_partner_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+msgid "Woo Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_res_partner__ks_woo_id
+msgid "Woo Id: Unique WooCommerce resource id for the customer on the specified \n"
+"                                           WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_category__ks_woo_id
+msgid "Woo Id: Unique WooCommerce resource id for the product category on the specified \n"
+"                                               WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_id
+msgid "Woo Id: Unique WooCommerce resource id for the product on the specified \n"
+"                                   WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_product__ks_woo_variant_id
+msgid "Woo Id: Unique WooCommerce resource id for the product variant on the \n"
+"                                       specified WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_account_tax__ks_woo_id
+msgid "Woo Id: Unique WooCommerce resource id for the tax on the specified \n"
+"                                       WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_tax__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_instance_operation__ks_woo_instances
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_category__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_woo_instance_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_woo_instance_id
+msgid "Woo Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_account_tax_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_category_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_res_partner_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_coupon_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_payment_gateway_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_logs_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+msgid "Woo Instance Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_name
+msgid "Woo Instance Name"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+msgid "Woo Instance Operation"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_instance_operation
+msgid "Woo Instance Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_instance_state
+msgid "Woo Instance State"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_src
+msgid "Woo Link"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_invoice__ks_woo_order_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_payment__ks_woo_sale_order_id
+msgid "Woo Order"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_account_invoice__ks_woo_order_id
+#: model:ir.model.fields,help:ks_woocommerce.field_account_payment__ks_woo_sale_order_id
+msgid "Woo Order: The WooCommerce Order"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_account_payment__ks_woo_payment_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_woo_payment_gateway
+msgid "Woo Payment Gateway"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_account_payment__ks_woo_payment_id
+msgid "Woo Payment Gateway: The WooCommerce payment gateway through which the \n"
+"                                        payment has been completed for the Woo Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_payment_gateway_tree
+msgid "Woo Payment Gateways"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_product_image
+msgid "Woo Product Image"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_image_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_image_tree
+msgid "Woo Product Images"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_payment_gateway_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_tags_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_tags_tree
+msgid "Woo Product Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_product_tree_view
+msgid "Woo Product Template Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_product_type
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_template_search_view
+msgid "Woo Product Type"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_woo_variant_reg_price
+msgid "Woo Regular Price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_sale_price
+msgid "Woo Sale Price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_woo_variant_sale_price
+msgid "Woo Sale price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_shipping
+msgid "Woo Shipping"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_attribute_search_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.woocommerce_product_tag_search_view
+msgid "Woo Slug"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_status__ks_woo_states
+msgid "Woo State"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_status
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_woo_status
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_sale_order_search_view
+msgid "Woo Status"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_status
+msgid "Woo Status: If enabled that means the product is published on the WooCommerce \n"
+"                                   Instance."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_sync_log
+msgid "Woo Sync Logs"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_tag
+msgid "Woo Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_res_partner_search_view
+msgid "Woo Username"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_woo_username
+msgid "Woo Username[Must be unique]"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_product__ks_woo_variant_id
+msgid "Woo Variant Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_template__ks_woo_regular_price
+msgid "Woo regular price"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_category_search_view
+msgid "Woo slug"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_instance_operation_form_view
+#: selection:ks.woo.sync.log,ks_operation:0
+msgid "Woo to Odoo"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.ui.menu,name:ks_woocommerce.menu_ks_woocomerce_base
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woocommerce_kanban_view
+msgid "WooCommerce"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.module.category,name:ks_woocommerce.ks_woocommerce_category
+msgid "WooCommerce Access"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_product_attribute
+msgid "WooCommerce Attributes"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_product_category
+msgid "WooCommerce Category"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_coupons
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_woo_coupons
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_sale_order_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_form
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_coupon_tree
+msgid "WooCommerce Coupons"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_res_partner
+msgid "WooCommerce Customers"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_dashboard_woocommerce_instance
+msgid "WooCommerce Dashboard"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_deliveries
+msgid "WooCommerce Deliveries"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_account_tax_form_view
+msgid "WooCommerce Details"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:product.product,name:ks_woocommerce.ks_woo_fees
+#: model:product.template,name:ks_woocommerce.ks_woo_fees_product_template
+msgid "WooCommerce Fees"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+msgid "WooCommerce Gallery"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_coupon__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_image__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_product_tag__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_product_attribute_value__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_res_partner__ks_woo_id
+msgid "WooCommerce Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_form_woocommerce_customer
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_woo_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_product_template_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_woo_sale_order_form_view
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.view_ks_woo_product_category_form
+msgid "WooCommerce Info"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_form_woocommerce_product_attribute
+msgid "WooCommerce Information"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.form_woocommerce_instance
+msgid "WooCommerce Instance"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_product_category__ks_woo_instance_id
+msgid "WooCommerce Instance: Ths instance of woocomerce to which this \n"
+"                                                         category belongs to."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_res_partner__ks_woo_instance_id
+msgid "WooCommerce Instance: Ths instance of woocomerce to which this \n"
+"                                                     customer belongs to."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_sale_order__ks_woo_instance_id
+msgid "WooCommerce Instance: Ths instance of woocomerce to which this \n"
+"                                                 product variant belongs to."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_account_tax__ks_woo_instance_id
+msgid "WooCommerce Instance: Ths instance of woocomerce to which this \n"
+"                                                 tax belongs to."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,help:ks_woocommerce.field_ks_woo_product_image__ks_woo_instance_id
+#: model:ir.model.fields,help:ks_woocommerce.field_product_template__ks_woo_instance_id
+msgid "WooCommerce Instance: Ths instance of woocomerce to which this \n"
+"                                             product variant belongs to."
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_instance
+msgid "WooCommerce Instances"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woocommerce_instances
+msgid "WooCommerce Instances Details"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_invoices
+msgid "WooCommerce Invoices"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_logs
+msgid "WooCommerce Logs"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.open_woo_instance_operation_wizard
+msgid "WooCommerce Operations"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_sale_order
+msgid "WooCommerce Orders"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_payment_gateways
+msgid "WooCommerce Payment Gateways"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_product_tags
+msgid "WooCommerce Product Tags"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_product_product
+msgid "WooCommerce Product Variants"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.actions.act_window,name:ks_woocommerce.action_woocommerce_product_templates
+msgid "WooCommerce Products"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woo_sync_log__ks_woo_id
+msgid "WooCommerce Record Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:product.product,name:ks_woocommerce.ks_woo_shipping_fees
+#: model:product.template,name:ks_woocommerce.ks_woo_shipping_fees_product_template
+msgid "WooCommerce Shipping Fees"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_woo_store_url
+msgid "WooCommerce Store URL"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_ks_woocommerce_instances__ks_wc_version
+msgid "WooCommerce Version"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.ui.view,arch_db:ks_woocommerce.ks_product_product_easy_edit_woo_form_view
+msgid "WooCommerce info"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order__ks_woo_id
+#: model:ir.model.fields,field_description:ks_woocommerce.field_sale_order_line__ks_woo_id
+msgid "Woocommerce Id"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model_terms:ir.actions.act_window,help:ks_woocommerce.action_dashboard_woocommerce_instance
+msgid "You can create a new WooCommerce Instance, For that go into:"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:product.product,weight_uom_name:ks_woocommerce.ks_woo_fees
+#: model:product.product,weight_uom_name:ks_woocommerce.ks_woo_shipping_fees
+#: model:product.template,weight_uom_name:ks_woocommerce.ks_woo_fees_product_template
+#: model:product.template,weight_uom_name:ks_woocommerce.ks_woo_shipping_fees_product_template
+msgid "kg"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_coupon
+msgid "ks.woo.coupon"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_payment_gateway
+msgid "ks.woo.payment.gateway"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woo_product_tag
+msgid "ks.woo.product.tag"
+msgstr ""
+
+#. module: ks_woocommerce
+#: model:ir.model,name:ks_woocommerce.model_ks_woocommerce_status
+msgid "ks.woocommerce.status"
+msgstr ""
+

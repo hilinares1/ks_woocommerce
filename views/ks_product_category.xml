@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Action for Exporting Product Category to Woo-->
+    <record id="ks_export_woocommerce_product_category" model="ir.actions.server">
+        <field name="name">Export/Update Category</field>
+        <field name="model_id" ref="model_product_category"/>
+        <field name="binding_model_id" ref="model_product_category"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_category_to_woo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_import_woocommerce_product_category" model="ir.actions.server">
+        <field name="name">Import Category</field>
+        <field name="model_id" ref="model_product_category"/>
+        <field name="binding_model_id" ref="model_product_category"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_category_to_odoo_wizard()
+        </field>
+    </record>
+
+     <record model="ir.ui.view" id="view_ks_woo_product_category_form">
+        <field name="name">ks.woo.product.category.form</field>
+        <field name="model">product.category</field>
+         <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="ks_sync_status" invisible="1"/>
+                        <button name="" class="oe_stat_button" disabled="True"
+                                attrs="{'invisible': [('ks_sync_status', '=', False)]}" icon="fa-check text-success">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Synchronised</span>
+                                <span class="o_stat_text">With Woo</span>
+                            </div>
+                        </button>
+                <button name="" class="oe_stat_button" disabled="True"
+                        attrs="{'invisible': [('ks_sync_status', '=', True )]}" icon="fa-times-circle text-danger">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">UnSynchronised</span>
+                        <span class="o_stat_text">With Woo</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//group" position="after">
+                <group name="woo_info" string="WooCommerce Info" groups="ks_woocommerce.ks_woocommerce_group">
+                    <group>
+                        <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_export_in_woo','!=',False)]}"/>
+                    </group>
+                    <group>
+                        <field name="ks_slug" attrs="{'readonly':[('ks_export_in_woo','!=',False)]}"/>
+                        <field name="ks_woo_id" attrs="{'invisible':[('ks_export_in_woo','=',False)]}"/>
+                        <field name="ks_export_in_woo" attrs="{'invisible':[('ks_export_in_woo','=',False)]}"/>
+                    </group>
+                </group>
+                <group groups="ks_woocommerce.ks_woocommerce_group">
+                    <label for="ks_woo_description"/>
+                    <field name="ks_woo_description" nolabel="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//form" position="inside">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_tree_woocommerce_product_category" model="ir.ui.view">
+        <field name="name">woocommerce.product.category.tree</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_list_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="ks_slug"/>
+                <field name="ks_woo_instance_id"/>
+                <field name="ks_woo_id"/>
+                <field name="ks_export_in_woo"/>
+                <field name="ks_sync_status" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_product_category_search_view" model="ir.ui.view">
+        <field name="name">ks.product.category.search</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="ks_slug" string="Woo slug" filter_domain="[('ks_slug','ilike',self)]"/>
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_woocommerce_product_category">
+        <field name="name">WooCommerce Category</field>
+        <field name="res_model">product.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_id','&gt;',0)]</field>
+        <field name="context">{'tree_view_ref': 'ks_woocommerce.ks_tree_woocommerce_product_category'}</field>
+    </record>
+
+
+    <menuitem id="menu_ks_woocomerce_product_category"
+              name="Category"
+              parent="menu_ks_woocomerce_products"
+              action="action_woocommerce_product_category"
+              sequence="1"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+</odoo>

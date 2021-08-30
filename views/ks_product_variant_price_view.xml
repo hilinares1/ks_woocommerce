@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ks_product_product_woo_form_view_inherited" model="ir.ui.view">
+        <field name="name">ks.product.variant.woo.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_medium']" position="replace">
+                <field name="ks_file_type" invisible="1"/>
+                <field name="ks_product_image_id" string='Gallery Images' invisible="1"/>
+                <field name="ks_variant_profile_image" widget="image" class="oe_avatar" options="{'preview_image': 'ks_variant_profile_image'}" filename="ks_file_type"/>
+            </xpath>
+        </field>
+    </record>
+    <!--    Inherited Normal Form view for Product.Product Variant Extra Price -->
+    <record id="ks_product_product_woo_form_views" model="ir.ui.view">
+        <field name="name">ks.product.variant.woo.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_medium']" position="replace">
+                <field name="ks_file_type" invisible="1"/>
+                <field name="ks_product_image_id" invisible="1"/>
+                <field name="ks_variant_profile_image" widget="image" class="oe_avatar" options="{'preview_image': 'ks_variant_profile_image'}" filename="ks_file_type"/>
+            </xpath>
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="woocommerce_info" string="WooCommerce Info" attrs="{'invisible':[('ks_to_be_export','=',False)]}" groups="ks_woocommerce.ks_woocommerce_group">
+                    <group>
+                        <field name="ks_to_be_export" invisible="1"/>
+                        <field name="ks_woo_variant_count" invisible="1"/>
+                        <field name="ks_woo_instance_id" readonly="1"/>
+                    </group>
+                    <group attrs="{'invisible':[('ks_variant_exported_in_woo','=',False)]}">
+                        <group>
+                            <field name="ks_date_variant_created"/>
+                            <field name="ks_date_variant_updated"/>
+                        </group>
+                        <group>
+                            <field name="ks_variant_exported_in_woo" readonly="1"/>
+                            <field name="ks_woo_variant_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <label for="ks_woo_variant_reg_price" string="Woo Regular Price"/>
+                            <div class="o_row">
+                                <field name="ks_woo_variant_reg_price" widget="monetary"/>
+                                <button name="open_variant_reg_pricelist_rules_data" icon="fa-arrow-right" type="object"
+                                        groups="product.group_product_pricelist" class="btn-link" style="padding:4px 10px;margin:5px 1vh 5px 1vh;">
+                                </button>
+                                <button name="open_variant_reg_pricelist_rules_data" string="Pricelist" type="object"
+                                        groups="product.group_product_pricelist" class="oe_inline" style="padding:4px">
+                                </button>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="ks_woo_variant_sale_price" string="Woo Sale Price"/>
+                            <div class="o_row">
+                                <field name="ks_woo_variant_sale_price" widget="monetary"/>
+                                <button name="open_variant_sale_pricelist_rules_data" icon="fa-arrow-right" type="object" class="btn-link" style="padding:4px 10px;margin:5px 1vh 5px 1vh;"/>
+                                <button name="open_variant_sale_pricelist_rules_data" string="Pricelist" type="object" class="oe_inline" style="padding:4px">
+                                </button>
+                            </div>
+                        </group>
+                    </group>
+
+                    <group string="Logistics" attrs="{'invisible': ['|',('ks_woo_product_type','=', 'simple') , ('ks_woo_product_type','=', 'grouped')]}">
+                        <group>
+                            <label for="ks_variant_weight" string="Weight"/>
+                            <span>
+                                <field name="ks_variant_weight"/>
+                                <field name="weight_uom_name"/>
+                            </span>
+                        </group>
+                        <div>
+                            <span style="padding-right: 27px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Length</b></span>
+                            <span style="padding-right: 29px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Width</b></span>
+                            <span groups="ks_woocommerce.ks_woocommerce_group"><b>Height</b></span><br/>
+                            <field name="ks_variant_length" style="width:65px; margin-right: 5px;" groups="ks_woocommerce.ks_woocommerce_group" placeholder="Length"/>
+                            <field name="ks_variant_width" style="width:65px; margin-right: 5px;" groups="ks_woocommerce.ks_woocommerce_group" placeholder="Width"/>
+                            <field name="ks_variant_height" style="width:65px" placeholder="Height" groups="ks_woocommerce.ks_woocommerce_group"/><br/>
+                        </div>
+                        <group>
+                            <label for="ks_variant_volume" string="Volume"/>
+                            <span>
+                                <p><field name="ks_variant_volume"/>m³</p>
+                            </span>
+                        </group>
+                    </group>
+
+                    <group string="Description">
+                        <field name="ks_woo_variant_description" string="Description" nolabel="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    Inherited Easy Edit Form view for Product.Product Variant Extra Price -->
+    <record id="ks_product_product_easy_edit_woo_form_views" model="ir.ui.view">
+        <field name="name">ks.product.variant.woo.easy.edit.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[3]" position="after">
+                <group name="woo_info" string="WooCommerce info" attrs="{'invisible':[('ks_to_be_export','=',False)]}">
+                    <field name="ks_to_be_export" invisible="1"/>
+                    <field name="ks_woo_variant_count" invisible="1"/>
+                    <field name="ks_woo_instance_id" readonly="1"/>
+                    <group attrs="{'invisible':[('ks_variant_exported_in_woo','=',False)]}">
+                        <field name="ks_date_variant_created"/>
+                        <field name="ks_date_variant_updated"/>
+                        <field name="ks_variant_exported_in_woo" readonly="1"/>
+                        <field name="ks_woo_variant_id" readonly="1"/>
+                    </group>
+                    <group name="woo_variant_price" attrs="{'invisible':[('ks_to_be_export','=',False)]}">
+                            <label for="ks_woo_variant_reg_price"/>
+                            <div>
+                                <field name="ks_woo_variant_reg_price" widget="monetary"/>
+                                <button name="open_variant_reg_pricelist_rules_data" icon="fa-arrow-right" type="object" class="oe_inline" style="padding:4px 10px;margin:5px 1vh 5px 1vh;">
+                                </button>
+                                <button name="open_variant_reg_pricelist_rules_data" string="Pricelist" type="object" class="oe_inline" style="padding:4px">
+                                </button>
+                            </div>
+                            <label for="ks_woo_variant_sale_price"/>
+                            <div>
+                                <field name="ks_woo_variant_sale_price" widget="monetary"/>
+                                <button name="open_variant_sale_pricelist_rules_data" icon="fa-arrow-right" type="object" class="oe_inline" style="padding:4px 10px;margin:5px 1vh 5px 1vh;"/>
+                                <button name="open_variant_sale_pricelist_rules_data" string="Pricelist" type="object" class="oe_inline" style="padding:4px">
+                                </button>
+                            </div>
+                    </group>
+                </group>
+                <group string="Woo Description">
+                    <field name="ks_woo_variant_description" nolabel="1" />
+                    </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_product_product_search_view" model="ir.ui.view">
+        <field name="name">ks.product.product.search.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                <field name="ks_woo_variant_id" string="Woo Id" filter_domain="[('ks_woo_variant_id','ilike',self)]"/>
+                <separator/>
+                <filter string="Today Created Woo Product Variant" name="woo_created_today"
+                        domain="[('ks_date_variant_created','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('ks_date_variant_created','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+                <filter string="Today Updated Woo Product Variant" name="woo_created_today"
+                        domain="[('ks_date_variant_updated','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('ks_date_variant_updated','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="ks_woo_product_product_tree_view">
+        <field name="name">ks.woo.product.product.tree</field>
+        <field name="model">product.product</field>
+        <field name="mode">primary</field>
+        <field name="priority">25</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="ks_woo_instance_id"/>
+                <field name="ks_woo_variant_id"/>
+                <field name="ks_woo_id" string="Woo Product Template Id"/>
+                <field name="ks_exported_in_woo" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_woocommerce_product_product">
+        <field name="name">WooCommerce Product Variants</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_variant_id','&gt;',0)]</field>
+        <field name="context">{'tree_view_ref': 'ks_woocommerce.ks_woo_product_product_tree_view' }</field>
+    </record>
+
+    <menuitem id="menu_ks_woocomerce_product_product"
+              name="Product Variant"
+              parent="menu_ks_woocomerce_products"
+              action="action_woocommerce_product_product"
+              sequence="5"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+</odoo>

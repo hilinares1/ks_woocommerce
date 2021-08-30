@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Form View for WooCommerce Stock Update Wizard-->
+        <record id="ks_update_stock_at_once_wizrad" model="ir.ui.view">
+            <field name="name">Update Stock</field>
+            <field name="model">ks.update.stock.at.once</field>
+            <field name="arch" type="xml">
+                <form string="Stock Update In Odoo">
+                    <group>
+                        <group>
+                            <field name="start_date" required="1"
+                                   string="Start Date"/>
+                            <field name="end_date" required="1"
+                                   string="End Date"/>
+                        </group>
+                        <group>
+                            <field name="ks_instance_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="product_ids" widget="many2many_tags"
+                                   domain="[('ks_woo_instance_id', '=', ks_instance_id)]"
+                                   options="{'no_create':True, 'no_open':True}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Update Stock" name="ks_update_stock_at_once" type="object" class="btn-primary"/>
+                        <button string="Close" class="btn-primary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

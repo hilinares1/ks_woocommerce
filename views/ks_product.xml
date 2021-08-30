@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_ks_woocomerce_products"
+              name="Products"
+              parent="menu_ks_woocomerce_base"
+              sequence="2"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+    <record id="ks_view_product_template_inherited" model="ir.ui.view">
+            <field name="name">ks.product.template.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='image_medium']" position="replace">
+                    <field name="ks_file_type" invisible="1"/>
+                    <field name="image_medium" widget="image" class="oe_avatar" filename="ks_file_type"/>
+                </xpath>
+            </field>
+    </record>
+    <record id="ks_view_product_template_volumes" model="ir.ui.view">
+            <field name="name">ks.product.template.volume</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.view_template_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_lots_and_weight']" position="replace">
+                    <group string="Logistics" name="group_lots_and_weight"
+                           attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}">
+                        <field name="ks_woo_product_has_variant" invisible="1"
+                               groups="ks_woocommerce.ks_woocommerce_group"/>
+                        <field name="ks_woo_product_type" invisible="1"/>
+                        <label for="weight"/>
+                        <div class="o_row" name="weight" >
+                            <field name="weight"/>
+                            <span><field name="weight_uom_name"/></span>
+                        </div>
+                        <label for="volume" style="padding-top: 45px;" />
+                        <div name="volume">
+                            <span style="padding-right: 27px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Length</b></span>
+                            <span style="padding-right: 29px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Width</b></span>
+                            <span groups="ks_woocommerce.ks_woocommerce_group"><b>Height</b></span><br/>
+                            <field name="ks_length" groups="ks_woocommerce.ks_woocommerce_group" style="width:65px; margin-right: 5px;" placeholder="Length"/>
+                            <field name="ks_width" groups="ks_woocommerce.ks_woocommerce_group" style="width:65px; margin-right: 5px;" placeholder="Width"/>
+                            <field name="ks_height" groups="ks_woocommerce.ks_woocommerce_group" style="width:65px" placeholder="Height"/><br/>
+                            <div class="o_row" >
+                            <field name="volume" style="width:90%;"  string="Volume"/>
+                            <span>m³</span>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+       </record>
+
+       <record id="ks_product_product_volume_calculation_form_views" model="ir.ui.view">
+            <field name="name">ks.product.product.volume</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='weight']" position="replace">
+                    <group string="Weights" name="weight" attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}">
+                        <label for="ks_variant_weight"/>
+                        <div class="o_row" name="weight">
+                            <field name="ks_variant_weight"/>
+                            <span><field name="weight_uom_name"/></span>
+                        </div>
+                        <label for="ks_variant_volume" style="padding-top: 45px;"/>
+                        <div name="volume">
+                            <span style="padding-right: 27px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Length</b></span>
+                            <span style="padding-right: 29px;" groups="ks_woocommerce.ks_woocommerce_group"><b>Width</b></span>
+                            <span groups="ks_woocommerce.ks_woocommerce_group"><b>Height</b></span><br/>
+                            <field name="ks_variant_length" style="width:65px; margin-right: 5px;" groups="ks_woocommerce.ks_woocommerce_group" placeholder="Length"/>
+                            <field name="ks_variant_width" style="width:65px; margin-right: 5px;" groups="ks_woocommerce.ks_woocommerce_group" placeholder="Width"/>
+                            <field name="ks_variant_height" style="width:65px" placeholder="Height" groups="ks_woocommerce.ks_woocommerce_group"/><br/>
+                            <div class="o_row">
+                            <field name="ks_variant_volume" style="width:90%;"  string="Volume"/>
+                            <span>m³</span>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+       </record>
+
+
+
+
+</odoo>
+

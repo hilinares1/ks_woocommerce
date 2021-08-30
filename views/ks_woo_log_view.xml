@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    Form view for WooCommerce Logs-->
+    <record model="ir.ui.view" id="ks_woo__log_form_view">
+        <field name="name">ks.woo.sync.log.form</field>
+        <field name="model">ks.woo.sync.log</field>
+        <field name="arch" type="xml">
+            <form name="WooCommerce Logs" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ks_type"/>
+                            <field name="ks_woo_instance_id"/>
+                            <field name="ks_date"/>
+                        </group>
+                        <group attrs="{'invisible': [('ks_operation_type', '=', 'batch_update')]}">
+                            <field name="ks_woo_id" attrs="{'invisible': [('ks_woo_id', '=', False)]}"/>
+                            <field name="ks_status"/>
+                        </group>
+
+                    </group>
+                    <group>
+                        <group>
+                            <field name="ks_operation_type"/>
+                        </group>
+                        <group>
+                            <field name="ks_operation"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ks_message"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    Tree view for WooCommerce Logs-->
+    <record model="ir.ui.view" id="ks_woo__log_tree_view">
+        <field name="name">ks.woo.sync.log.tree</field>
+        <field name="model">ks.woo.sync.log</field>
+        <field name="arch" type="xml">
+            <tree name="WooCommerce Logs" decoration-success="ks_status=='success'" decoration-danger="ks_status=='failed'" create="0">
+                <field name="ks_type"/>
+                <field name="ks_operation_type"/>
+                <field name="ks_operation"/>
+                <field name="ks_message"/>
+                <field name="ks_woo_instance_id"/>
+                <field name="ks_date"/>
+                <field name="ks_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="woocommerce_logs_search_view" model="ir.ui.view">
+        <field name="name">ks.woo.sync.log.search</field>
+        <field name="model">ks.woo.sync.log</field>
+        <field name="arch" type="xml">
+            <search string="Product">
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <separator/>
+                <filter string="Today Logs" name="logs_today"
+                domain="[('ks_date','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('ks_date','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type" name="type" context="{'group_by':'ks_type'}"/>
+                    <filter string="Operation" name="operation" context="{'group_by':'ks_operation'}"/>
+                    <filter string="Operation Status" name="operation_status" context="{'group_by':'ks_status'}"/>
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+<!--    Action window for WooCommerce Logs-->
+    <record model="ir.actions.act_window" id="action_woocommerce_logs">
+        <field name="name">WooCommerce Logs</field>
+        <field name="res_model">ks.woo.sync.log</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    Menuitem for WooCommerce Logs-->
+    <menuitem id="menu_ks_woocomerce_log"
+          name="Logs"
+          parent="menu_ks_woocomerce_base"
+          action="action_woocommerce_logs"
+          sequence="4"
+          groups="ks_woocommerce.ks_woocommerce_group"
+        />
+
+</odoo>

@@ -1,0 +1,2 @@
+woocommerce==2.1.1
+python-wordpress-xmlrpc==2.3

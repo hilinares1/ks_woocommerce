@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="ks_woo_guest_customers" model="res.partner">
+            <field name="name">Guest Customer</field>
+        </record>
+    </data>
+</odoo>

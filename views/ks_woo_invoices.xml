@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_woocommerce_invoices">
+        <field name="name">WooCommerce Invoices</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_order_id', '!=', False)]</field>
+        <field name="context">{'tree_view_ref': 'account.invoice_tree_with_onboarding'}</field>
+    </record>
+
+    <record id="view_move_form_extend" model="ir.ui.view">
+        <field name="name">account.move.form.extended</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']"-->
+<!--                       position="before">-->
+<!--                    <field name="ks_discount_amount_value"/>-->
+<!--                </xpath>-->
+            <xpath expr="//button[@name='action_duplicate']" position="after">
+                <field name="ks_refund_done" invisible="1"/>
+                <field name="ks_woo_order_id" invisible="1"/>
+                <button name = "refund_in_woo" string = "Refund in WooCommerce"
+                        type = "object" class = "oe_highlight"
+                        attrs="{'invisible':['|', ('state', '=', 'draft'),
+                        ('ks_woo_order_id','=',False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_ks_woocomerce_invoices"
+              name="Invoices"
+              parent="menu_ks_woocomerce_order"
+              sequence="2"
+              action="action_woocommerce_invoices"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+   </odoo>

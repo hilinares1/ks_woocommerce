@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    Action for Exporting or Updating Customers to Woo-->
+    <record id="ks_update_woocommerce_partner" model="ir.actions.server">
+        <field name="name">Export &amp; Update Customers </field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_customer_to_woo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_import_woocommerce_partner" model="ir.actions.server">
+        <field name="name">Import Customer</field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_import_individual_customer_to_odoo_wizard()
+        </field>
+    </record>
+
+<!-- Form view for Woo Customers-->
+    <record id="ks_form_woocommerce_customer" model="ir.ui.view">
+        <field name="name">ks.woo.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" name="button_box">
+                <field name="ks_sync_status" invisible="1"/>
+                        <button name="" class="oe_stat_button" readonly="True"
+                                attrs="{'invisible': [('ks_sync_status', '=', False)]}" icon="fa-check text-success">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Synchronised</span>
+                                <span class="o_stat_text">With Woo</span>
+                            </div>
+                        </button>
+                <button name="" class="oe_stat_button" readonly="True"
+                        attrs="{'invisible': [('ks_sync_status', '=', True )]}" icon="fa-times-circle text-danger">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">UnSynchronised</span>
+                        <span class="o_stat_text">With Woo</span>
+                    </div>
+                </button>
+            </div>
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="woo_info" string="WooCommerce Info" groups="ks_woocommerce.ks_woocommerce_group">
+                    <group>
+                        <group>
+                            <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly': [('ks_export_in_wo', '!=', False)]}"/>
+                            <field name="ks_woo_username" attrs="{'readonly': [('ks_woo_username', '!=', False),
+                            ('ks_woo_id', '!=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="ks_woo_id" readonly="1"/>
+                            <field name="ks_export_in_wo" readonly="1" />
+                            <field name="ks_sync_date"/>
+                            <field name="ks_last_exported_date"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Tree view for Woo Customers-->
+    <record id="ks_tree_woocommerce_customer" model="ir.ui.view">
+        <field name="name">ks.woo.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="ks_woo_instance_id" groups="ks_woocommerce.ks_woocommerce_group"/>
+                <field name="ks_woo_id" groups="ks_woocommerce.ks_woocommerce_group"/>
+                <field name="ks_export_in_wo" groups="ks_woocommerce.ks_woocommerce_group"/>
+                <field name="ks_sync_status" readonly="1" groups="ks_woocommerce.ks_woocommerce_group"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_res_partner_search_view" model="ir.ui.view">
+        <field name="name">ks.res.partner.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="ks_woo_username" string="Woo Username" filter_domain="[('ks_woo_username','ilike',self)]"/>
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+<!--    Action window for Woo Customers-->
+    <record model="ir.actions.act_window" id="action_woocommerce_res_partner">
+        <field name="name">WooCommerce Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_id','&gt;',0)]</field>
+        <field name="view_id" ref="ks_woocommerce.ks_tree_woocommerce_customer" />
+        <field name="context">{"search_default_customer":1}</field>
+    </record>
+
+<!--    Menuitem for Woo Customers-->
+    <menuitem id="menu_ks_woocomerce_res_partner"
+              name="Customers"
+              parent="menu_ks_woocomerce_base"
+              action="action_woocommerce_res_partner"
+              sequence="1"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+</odoo>

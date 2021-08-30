@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="form_woocommerce_instances">
+        <field name="name">WooCommerce Instance</field>
+        <field name="model">ks.woocommerce.instances</field>
+        <field name="arch" type="xml">
+            <form string="WooCommerce Instance">
+                <header>
+                    <button name="ks_connect_to_woo_instance" string="Connect Instance" type="object"
+                            class="oe_highlight"  attrs="{'invisible':[('ks_instance_state', 'in', ['connected', 'active'])]}"/>
+                    <button name="ks_activate_instance" string="Active Instance" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('ks_instance_state', 'in', ['active', 'draft', 'deactivate'])]}"/>
+                    <button name="ks_deactivate_instance" string="Deactivate Instance" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('ks_instance_state', 'in', ['connected', 'draft', 'deactivate'])]}"/>
+                    <field name="ks_instance_state" widget="statusbar" nolabel="1" readonly="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="ks_name" placeholder="Instance Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+
+                            <field name="ks_woo_store_url"
+                                   attrs="{'readonly':[('ks_instance_state', 'not in', ['draft', 'deactivate'])]}"/>
+                            <field name="ks_customer_key"
+                                   attrs="{'readonly':[('ks_instance_state', 'not in', ['draft', 'deactivate'])],
+                                   'invisible': [('ks_instance_state', 'not in', ['draft'])]}"/>
+                            <field name="ks_customer_secret"
+                                   attrs="{'readonly':[('ks_instance_state', 'not in', ['draft', 'deactivate'])],
+                                   'invisible': [('ks_instance_state', 'not in', ['draft'])]}"/>
+                        </group>
+                        <group>
+                            <field name="ks_id" />
+                            <field name="ks_wc_version"/>
+                            <field name="ks_verify_ssl"/>
+                            <field name="ks_auth"/>
+                        </group>
+                    </group>
+                    <notebook attrs="{'invisible':[('ks_instance_state', 'not in', ['connected', 'active'])]}">
+                        <page name="ks_woo_configurations" string="Configuration">
+                            <group>
+                                <group name="basic_odoo_info">
+                                    <field name="ks_company" options="{'no_open': False, 'no_create': True}"
+                                           attrs="{'required':[('ks_instance_state', '!=', 'draft')] }"/>
+                                    <field name="ks_warehouse" options="{'no_open': False, 'no_create': True}"
+                                           attrs="{'required':[('ks_instance_state', '!=', 'draft')] }"/>
+                                </group>
+                                <group name="curreny_info">
+                                    <field name="ks_multi_currency_option"/>
+                                    <field name="ks_woo_multi_currency" options="{'no_create': True}"
+                                           widget="many2many_tags"
+                                           attrs="{'required':[('ks_multi_currency_option', '!=', False), ('ks_instance_state', '!=', 'draft') ],
+                                           'invisible':[('ks_multi_currency_option','=',False)]}"/>
+                                    <field name="ks_woo_currency" options="{'no_create': True}"
+                                           attrs="{'required':[('ks_instance_state', '!=', 'draft')] }"/>
+                                    <!--                                     <field name="ks_multi_main_currency"-->
+                                    <!--                                            attrs="{'required':[('ks_multi_currency_option', '!=', False), ('ks_instance_state', '!=', 'draft') ],-->
+                                    <!--                                           'invisible':[('ks_multi_currency_option','=',False)]}"/>-->
+                                    <!--                                    <field name="ks_multi_computed" invisible="1"/>-->
+                                </group>
+                            </group>
+                        </page>
+                        <page name="ks_woo_products" string="Product">
+                            <group name="stock_field_type">
+                                <group name="stock_field_type" string="Stock Field Configuration">
+                                    <field name="ks_stock_field_type"
+                                           attrs="{'required':[('ks_instance_state', '!=', 'draft')] }"
+                                           options="{'no_open': True, 'no_create': True}"/>
+                                </group>
+                                <!--                                <group string="Product Image Configuration">-->
+                                <!--                                    <field name="ks_import_images_with_products" widget="boolean_toggle"/>-->
+                                <!--                                </group>-->
+                                <group string="Global Discount Configuration">
+                                    <field name="ks_global_discount_enable" widget="boolean_toggle"/>
+                                    <field name="ks_global_discount" attrs="{'invisible':[('ks_global_discount_enable', '=', False)] }"/>
+                                </group>
+                                <group name="product_pricelist" string="Pricelist Configuration">
+                                    <field name="ks_woo_pricelist_ids" widget="many2many_tags" readonly="1" attrs="{'invisible':[('ks_multi_currency_option', '=', False)] }"/>
+                                    <field name="ks_woo_pricelist" invisible="0" readonly="1"/>
+                                    <field name="ks_woo_sale_pricelist" invisible="0" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="ks_woo_orders" string="Orders">
+                            <group name="order_state_config" string="Order State Configuration">
+                                <field name="ks_import_order_state_config"  string="Order State Configuration" nolabel="1"
+                                       widget="one2many_list" >
+                                    <tree decoration-success="ks_sync == True" create="0" delete="0" editable="bottom">
+                                        <field name="ks_sync"/>
+                                        <field name="ks_woo_states"/>
+                                        <field name="ks_odoo_state"/>
+                                        <field name="ks_create_invoice"/>
+                                        <field name="ks_set_invoice_state" attrs="{'readonly':[('ks_create_invoice', '=', False)]}"/>
+                                        <field name="ks_confirm_shipment" attrs="{'readonly':[('ks_odoo_state', '=', 'draft')]}"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group name="sale_basic_info">
+                                <group>
+                                    <field name="ks_order_prefix" placeholder="Sale Order Prefix"/>
+                                    <field name="ks_sales_team" attrs="{'required':[('ks_instance_state', '!=', 'draft')]}"/>
+                                    <field name="ks_sales_person" attrs="{'required':[('ks_instance_state', '!=', 'draft')]}"/>
+                                </group>
+                                <group>
+
+                                    <field name="ks_woo_fees"/>
+                                    <field name="ks_woo_shipping"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="ks_woo_account" string="Payment">
+                            <group>
+                                <group>
+                                    <field name="ks_journal_id" attrs="{'required':[('ks_instance_state', '!=', 'draft')]}"/>
+                                </group>
+                                <group>
+                                    <field name="ks_payment_term_id"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Automatic Jobs" name="ks_woo_auto_jobs">
+                            <group name="cron_product_imp">
+                                <group>
+                                    <field name="ks_auto_import_product" widget="boolean_toggle"/>
+                                    <field name="ks_aip_cron_active_permission" widget="boolean_toggle"/>
+<!--                                    <field name="ks_aip_update_permission"-->
+<!--                                           attrs="{'invisible':[('ks_aip_cron_id', '=', False)]}"-->
+<!--                                           groups="base.group_no_one"/>-->
+                                    <field name="ks_aip_cron_id" groups="base.group_no_one"
+                                           string="Auto Import Product Cron Link"/>
+                                    <button name="ks_manage_auto_import_product_job"
+                                            class="oe_highlight" type="object">
+                                        Update Cron
+                                    </button>
+                                </group>
+                                <group attrs="{'invisible':[('ks_auto_import_product','=',False)]}">
+                                    <field name="ks_cron_ip_schedule_user" string="Scheduler User" required="True"
+                                           options="{'no_create': True}"/>
+                                    <field name="ks_cron_ip_interval_number" string='Execute Every' required="True"/>
+                                    <field name="ks_cron_ip_interval_type" string='Interval Unit' required="True"/>
+                                    <field name="ks_aip_cron_last_updated"/>
+                                    <field name="ks_aip_cron_next_update"/>
+                                    <!--                                     <field name="ks_cron_ip_nextcall"/>-->
+                                </group>
+
+                            </group>
+                            <group name="cron_order_imp">
+                                <group>
+                                    <field name="ks_auto_import_order" widget="boolean_toggle"/>
+                                    <field name="ks_aio_cron_active_permission" widget="boolean_toggle"/>
+<!--                                    <field name="ks_aio_update_permission"-->
+<!--                                           attrs="{'invisible':[('ks_aio_cron_id', '=', False)]}"-->
+<!--                                           groups="base.group_no_one"/>-->
+                                    <field name="ks_aio_cron_id" groups="base.group_no_one"
+                                           string="Auto Import Order Cron Link"/>
+                                    <button name="ks_manage_auto_import_order_job"
+                                            class="oe_highlight" type="object">
+                                        Update Cron
+                                    </button>
+                                </group>
+                                <group attrs="{'invisible':[('ks_auto_import_order','=',False)]}">
+                                    <field name="ks_cron_aio_schedule_user" string="Scheduler User" required="True"
+                                           options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="ks_cron_aio_interval_number" string='Execute Every' required="True"/>
+                                    <field name="ks_cron_aio_interval_type" string='Interval Unit' required="True"/>
+                                    <field name="ks_aio_cron_last_updated"/>
+                                    <field name="ks_aio_cron_next_update"/>
+                                    <!--                                    <field name="ks_cron_aio_nextcall"/>-->
+                                </group>
+                            </group>
+                            <group name="cron_order_status_update">
+                                <group>
+                                    <field name="ks_auto_update_order_status" widget="boolean_toggle"/>
+                                    <field name="ks_auos_cron_active_permission"
+                                    widget="boolean_toggle"/>
+                                    <!--                                    <field name="ks_auos_cron_active_permission_related" invisible="True"/>-->
+<!--                                    <field name="ks_auos_update_permission"-->
+<!--                                           attrs="{'invisible':[('ks_auos_cron_id', '=', False)]}"-->
+<!--                                           groups="base.group_no_one"/>-->
+                                    <field name="ks_auos_cron_id" groups="base.group_no_one"
+                                           string="Auto Update Order Status Cron Link"/>
+                                    <button name="ks_manage_auto_update_order_status_job"
+                                            class="oe_highlight" type="object">
+                                        Update Cron
+                                    </button>
+                                </group>
+                                <!--                                <group>-->
+                                <!--                                    <field name="ks_auos_cron_last_updated"/>-->
+                                <!--                                </group>-->
+                                <group attrs="{'invisible':[('ks_auto_update_order_status','=',False)]}">
+                                    <field name="ks_cron_auos_schedule_user" string="Scheduler User" required="True"
+                                           options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="ks_cron_auos_interval_number" string='Execute Every' required="True"/>
+                                    <field name="ks_cron_auos_interval_type" string='Interval Unit' required="True"/>
+                                    <field name="ks_auos_cron_last_updated"/>
+                                    <field name="ks_auos_cron_next_update"/>
+                                    <!--                                    <field name="ks_cron_auos_nextcall"/>-->
+                                </group>
+                            </group>
+                            <group name="cron_stock_update">
+                                <group>
+                                    <field name="ks_auto_update_stock" widget="boolean_toggle"/>
+                                    <field name="ks_aus_cron_active_permission"
+                                    widget="boolean_toggle"/>
+<!--                                    <field name="ks_aus_update_permission"-->
+<!--                                           attrs="{'invisible':[('ks_aus_cron_id', '=', False)]}"-->
+<!--                                           groups="base.group_no_one"/>-->
+                                    <field name="ks_aus_cron_id" groups="base.group_no_one"
+                                           string="Auto Update Product Stock Cron Link"/>
+                                    <button name="ks_manage_auto_update_stock_job"
+                                            class="oe_highlight" type="object">
+                                        Update Cron
+                                    </button>
+                                </group>
+                                <!--                                <group>-->
+                                <!--                                    <field name="ks_aus_cron_last_updated"/>-->
+                                <!--                                </group>-->
+                                <group attrs="{'invisible':[('ks_auto_update_stock','=',False)]}">
+                                    <field name="ks_cron_aus_schedule_user" string="Scheduler User" required="True"
+                                           options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="ks_cron_aus_interval_number" string='Execute Every' required="True"/>
+                                    <field name="ks_cron_aus_interval_type" string='Interval Unit' required="True"/>
+                                    <field name="ks_aus_cron_last_updated"/>
+                                    <field name="ks_aus_cron_next_update"/>
+                                    <!--                                    <field name="ks_cron_aus_nextcall"/>-->
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Webhooks" name="ks_woo_webhooks">
+                            <div style="padding: 15px; margin: 3px; background: #f0f1f0;">
+                                <div style="color: #7c7bad; font-size: 20px; padding-left: 35px;">
+                                    Implementing Webhook for this WooCommerce Instance use these following Delivery
+                                    URLs:
+                                </div>
+                                <field name="ks_database_name" invisible="1"/>
+                                <field name="ks_current_user" invisible="1"/>
+                                <div class="row" style="padding-left: 180px; padding-top: 25px;">
+                                    <div style="font-size: 20px; text-decoration: underline;">Topic</div>
+                                    <div style="padding-left: 20%; text-decoration: underline; font-size: 20px;">
+                                        Delivery URL
+                                    </div>
+                                </div>
+                                <div style="font-size: 16px; padding-top: 15px;">
+
+                                    <ul style="list-style: none; padding-left: 132px;">
+                                        <li>Order Created
+                                            <span style="padding-left:41px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/order/create
+                                            </span>
+                                        </li>
+                                        <li>Order Updated
+                                            <span style="padding-left:37px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/order/update
+                                            </span>
+                                        </li>
+                                        <li>Product Created
+                                            <span style="padding-left:27px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/product/create
+                                            </span>
+                                        </li>
+                                        <li>Product Updated
+                                            <span style="padding-left:24px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/product/update
+                                            </span>
+                                        </li>
+                                        <li>Coupon Created
+                                            <span style="padding-left:26px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/coupon/create
+                                            </span>
+                                        </li>
+                                        <li>Coupon Updated
+                                            <span style="padding-left:22px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/coupon/update
+                                            </span>
+                                        </li>
+                                        <li>Customer Created
+                                            <span style="padding-left:13px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/customer/create
+                                            </span>
+                                        </li>
+                                        <li>Customer Updated
+                                            <span style="padding-left:8px; padding-right:39px;">----></span>
+                                            <span><field name="ks_base_url" readonly="1"/>/woo_hook/<field name="id" readonly="1"/>/<field name="ks_database_name" readonly="1"/>/<field name="ks_current_user" readonly="1"/>/customer/update
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br/>
+                                <div>
+                                    <b>
+                                    <span style="color: black; font-size: 17px; padding-left: 35px;">Note - </span><span style="color: black; font-size: 17px;"> For multiple databases please add "server_wide_modules = web,ks_woocommerce" into your odoo-config file.</span>
+                                    </b>
+                                </div>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="tree_woocommerce_instance">
+        <field name="name">WooCommerce Instance</field>
+        <field name="model">ks.woocommerce.instances</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ks_name"/>
+                <field name="ks_wc_version"/>
+                <field name="ks_woo_store_url"/>
+                <field name="ks_instance_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_woocommerce_instance">
+        <field name="name">WooCommerce Instances</field>
+        <field name="res_model">ks.woocommerce.instances</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="menu_ks_woocomerce_base"
+              name="WooCommerce"
+              groups="ks_woocommerce.ks_woocommerce_group"
+              web_icon="ks_woocommerce,static/description/icon.png"/>
+
+    <menuitem id="menu_ks_woocomerce_configuration"
+              name="Configuration"
+              parent="menu_ks_woocomerce_base"
+              sequence="8"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+    <menuitem id="menu_ks_woocomerce_instances"
+              name="Instances"
+              parent="menu_ks_woocomerce_configuration"
+              action="action_woocommerce_instance"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+
+</odoo>

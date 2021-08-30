@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_woocommerce_deliveries">
+        <field name="name">WooCommerce Deliveries</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('sale_id.ks_woo_id','&gt;',0)]</field>
+    </record>
+
+    <menuitem id="menu_ks_woocomerce_delivery"
+              name="Delivery"
+              parent="menu_ks_woocomerce_order"
+              sequence="1"
+              action="action_woocommerce_deliveries"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+
+
+
+
+</odoo>

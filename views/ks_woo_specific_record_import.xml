@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Form View for Record Mapping-->
+        <record id="ks_woo_specific_record_import" model="ir.ui.view">
+            <field name="name">ks.specific.record.import.view</field>
+            <field name="model">ks.specific.record.import</field>
+            <field name="arch" type="xml">
+                <form string="Woo Specific Record Import">
+                    <sheet>
+                        <group name="woo_record_info">
+                            <group>
+                                <field name="ks_woo_instance" required='1' options="{'no_create_edit': True, 'no_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="ks_model" string="Model Name"
+                                       options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
+                                <field name="ks_model_name" invisible="1"/>
+                                <field name="ks_all_records_ids"
+                                       attrs="{'invisible': [('ks_model', '=', False)]}"/>
+                            </group>
+                            <field name="ks_value_example" nolabel="1" style="padding-left:605px;"
+                                   attrs="{'invisible': [('ks_model', '=', False)]}"/>
+
+                        </group>
+                        <footer>
+                            <button string="Execute" name="ks_import_specific_record" type="object"
+                                    class="btn-primary"/>
+                            <button string="Close" class="btn-primary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_woo_specific_record_wizard" model="ir.actions.act_window">
+            <field name="name">Import Specific Record</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ks.specific.record.import</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_ks_woocomerce_import_specific_record"
+                  name="Import Specific Record"
+                  parent="menu_ks_woocomerce_base"
+                  action="open_woo_specific_record_wizard"
+                  sequence="7"
+                  groups="ks_woocommerce.ks_woocommerce_group"
+        />
+
+    </data>
+</odoo>

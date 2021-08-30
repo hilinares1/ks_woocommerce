@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+<!--        Record Mapping Form View-->
+		<record id="ks_woo_mapping_data_form_view" model="ir.ui.view">
+			<field name="name">ks.woo.model.mapping.view</field>
+			<field name="model">ks.woo.model.mapping</field>
+			<field name="arch" type="xml">
+				<form string="Woo Mapping View">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ks_model" string="Model Name" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
+                                <field name="ks_model_name" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="ks_woo_instance" invisible="1" options="{'no_create_edit': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+                        <field name="ks_temp_text" nolabel="1" attrs="{'invisible': [('ks_model', '!=', False)]}"
+                               style="padding-left: 600px; font-size: 16px; font-weight: bold; padding-top: 200px;"/>
+                        <div attrs="{'invisible': [('ks_model_name', '!=', 'product.product')]}" style="color:red;">
+                            <center>
+                                <b>
+                                    **The list contains only Products whose Product Template have Woo-Id
+                                </b>
+                            </center>
+                        </div>
+                        <group>
+                            <field name="ks_all_records" nolabel="1"
+                                   widget="many2many" attrs="{'invisible': [('ks_model', '=', False)]}">
+                                <tree editable="top" create="0" edit="0">
+                                    <field name="ks_record_id"/>
+                                    <field name="ks_name"/>
+                                    <field name="ks_woo_id" required="1"/>
+                                    <field name="ks_woo_instance" required="1" options="{'no_create_edit': True, 'no_create': True}"/>
+                                </tree>
+                            </field>
+                        </group>
+					<footer>
+                        <button string="Execute" name="ks_execute_all_records" type="object" class="btn-primary"/>
+						<button string="Close" class="btn-primary" special="cancel" />
+					</footer>
+                    </sheet>
+				</form>
+			</field>
+		</record>
+
+<!--        Record Mapping Action Window-->
+        <record id="open_woo_instance_mapping_wizard" model="ir.actions.act_window">
+           <field name="name">WooCommerce Record Mapping</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">ks.woo.model.mapping</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+        </record>
+
+<!--        Record Mapping Menu-->
+        <menuitem id="menu_ks_woocomerce_mapping"
+          name="Mapping"
+          parent="menu_ks_woocomerce_base"
+          action="open_woo_instance_mapping_wizard"
+          sequence="7"
+          groups="ks_woocommerce.ks_woocommerce_group"
+        />
+	</data>
+</odoo>

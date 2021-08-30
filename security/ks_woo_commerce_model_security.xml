@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Woo Instance-->
+    <record model="ir.rule" id="ks_woocommerce_instance_security_rule">
+        <field name="name">ks.woocommerce.instances multi-company</field>
+        <field name="model_id" ref="model_ks_woocommerce_instances" />
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('ks_company','child_of',[user.company_id.id]),('ks_company','=',False)]</field>
+    </record>
+
+<!--    Woo Log-->
+    <record model="ir.rule" id="ks_woo_sync_log_security_rule">
+        <field name="name">ks.woo.sync.log multi-company</field>
+        <field name="model_id" ref="model_ks_woo_sync_log" />
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('ks_company','child_of',[user.company_id.id]),('ks_company','=',False)]</field>
+    </record>
+
+<!--    Woo Payment Gateway-->
+    <record model="ir.rule" id="ks_woo_payment_gateway_security_rule">
+        <field name="name">ks.woo.payment.gateway multi-company</field>
+        <field name="model_id" ref="model_ks_woo_payment_gateway" />
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('ks_company','child_of',[user.company_id.id]),('ks_company','=',False)]</field>
+    </record>
+
+<!--    Woo Coupons-->
+    <record model="ir.rule" id="ks_woo_coupon_security_rule">
+        <field name="name">ks.woo.coupon multi-company</field>
+        <field name="model_id" ref="model_ks_woo_coupon" />
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('ks_company','child_of',[user.company_id.id]),('ks_company','=',False)]</field>
+    </record>
+
+<!--    Woo Tags-->
+    <record model="ir.rule" id="ks_woo_product_tag_security_rule">
+        <field name="name">ks.woo.product.tag multi-company</field>
+        <field name="model_id" ref="model_ks_woo_product_tag" />
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('ks_company','child_of',[user.company_id.id]),('ks_company','=',False)]</field>
+    </record>
+</odoo>

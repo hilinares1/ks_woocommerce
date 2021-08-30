@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ks_account_tax_form_view" model="ir.ui.view">
+        <field name="name">ks.account.tax.inherit.form</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="WooCommerce Details" groups="ks_woocommerce.ks_woocommerce_group">
+                    <group>
+                        <group>
+                            <field name="ks_woo_id"/>
+                            <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_export_in_wo','!=',False)]}"/>
+                        </group>
+                        <group>
+                            <field name="ks_export_in_wo"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_account_tax_search_view" model="ir.ui.view">
+        <field name="name">ks.account.tax.search</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_account_tax_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_woo_account_payment_form_view" model="ir.ui.view">
+        <field name="name">ks.woo.account.payment.inherit.form.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_transaction_id']" position="after">
+                <field name="ks_woo_sale_order_id" invisible="1"/>
+                <field name="ks_woo_payment_id" groups="ks_woocommerce.ks_woocommerce_group"
+                       attrs="{'invisible': [('ks_woo_payment_id', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_transaction_id']" position="attributes">
+                <attribute name="attrs">{'invisible': [('ks_woo_payment_id', '!=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_woo_account_payment_invoice_form_view" model="ir.ui.view">
+        <field name="name">ks.woo.account.payment.invoice.inherit.form.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="ks_woo_sale_order_id" invisible="1"/>
+                <field name="ks_woo_payment_id" groups="ks_woocommerce.ks_woocommerce_group"
+                       attrs="{'invisible': [('ks_woo_sale_order_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="ks_woo_account_invoices_form_view" model="ir.ui.view">
+        <field name="name">ks.woo.account.invoice.inherit.form.view</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_id']" position="after">
+                <field name="ks_woo_order_id" options="{'no_open': True}"
+                       groups="ks_woocommerce.ks_woocommerce_group"
+                       attrs="{'invisible': [('ks_woo_order_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

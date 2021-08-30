@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ks_woocommerce_instances,access_ks_woocommerce_instances,model_ks_woocommerce_instances,,1,1,1,1
+access_ks_woo_product_image,access_ks_woo_product_image,model_ks_woo_product_image,,1,1,1,1
+access_ks_woo_product_tag,access_ks_woo_product_tag,model_ks_woo_product_tag,,1,1,1,1
+access_ks_woo_coupon,access_ks_woo_coupon,model_ks_woo_coupon,,1,1,1,1
+access_ks_woo_sync_log,access_ks_woo_sync_log,model_ks_woo_sync_log,,1,1,1,1
+access_ks_woo_payment_gateway,access_ks_woo_payment_gateway,model_ks_woo_payment_gateway,,1,1,1,1
+access_ks_woocommerce_status,access_ks_woocommerce_status,model_ks_woocommerce_status,,1,1,1,1
+access_ks_woo_product_variant_image,access_ks_woo_product_variant_image,model_ks_woo_product_variant_image,,1,1,1,1
+
+

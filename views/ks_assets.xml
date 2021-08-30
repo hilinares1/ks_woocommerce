@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+		<template id="assets_backend_2" name="Backend Theme_3" inherit_id="web.assets_backend">
+			<xpath expr=".">
+				<link rel="stylesheet" href="/ks_woocommerce/static/src/css/style.css"/>
+            </xpath>
+		</template>
+	</data>
+</odoo>

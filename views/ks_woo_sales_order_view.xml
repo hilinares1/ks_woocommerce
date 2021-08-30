@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--    Action for Exporting and Updating Sale Order from Odoo to Woo-->
+    <record id="ks_export_woocommerce_order" model="ir.actions.server">
+        <field name="name">Export Order</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_export_order_to_woo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_import_woocommerce_order" model="ir.actions.server">
+        <field name="name">Import Order</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_import_order_to_odoo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_update_woocommerce_order" model="ir.actions.server">
+        <field name="name">Update Order Status</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            records.ks_update_woo_order_status()
+        </field>
+    </record>
+
+    <record id="ks_woo_sale_order_form_view" model="ir.ui.view">
+            <field name="name">ks.woo.sale.order.inherit.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" class="oe_button_box">
+                <field name="ks_sync_status" invisible="1"/>
+                        <button name="" class="oe_stat_button" disabled="True"
+                                attrs="{'invisible': [('ks_sync_status', '=', False)]}" icon="fa-check text-success">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Synchronised</span>
+                                <span class="o_stat_text">With Woo</span>
+                            </div>
+                        </button>
+                <button name="" class="oe_stat_button" disabled="True"
+                        attrs="{'invisible': [('ks_sync_status', '=', True )]}" icon="fa-times-circle text-danger">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">UnSynchronised</span>
+                        <span class="o_stat_text">With Woo</span>
+                    </div>
+                </button>
+            </div>
+                <xpath expr="//header" position="inside">
+                    <button class="btn btn-primary" name="ks_cancel_sale_order_in_woo" type="object" string="Cancel in WooCommerce"
+                            groups="ks_woocommerce.ks_woocommerce_group"
+                    attrs="{'invisible':['|','|', ('state','not in','cancel'),('ks_woo_status', '=', 'cancelled'),('ks_woo_id', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//page[@name='other_information']" position="after">
+                    <page name="woo_info" string="WooCommerce Info" groups="ks_woocommerce.ks_woocommerce_group">
+                        <group>
+                            <group>
+                                <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_exported_in_woo','!=',False)]}"/>
+                                <field name="ks_woo_id" attrs="{'invisible': [('ks_woo_id', '=', 0)]}"/>
+                                <field name="ks_exported_in_woo" attrs="{'invisible': [('ks_exported_in_woo', '=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="ks_woo_status" attrs="{'readonly': [('ks_exported_in_woo', '=', False)]}"/>
+                                <field name="ks_woo_payment_gateway" attrs="{'invisible': [('ks_exported_in_woo', '=', False)]}"/>
+                                <field name="ks_date_created" attrs="{'invisible': [('ks_exported_in_woo', '=', False)]}"/>
+                                <field name="ks_date_updated" attrs="{'invisible': [('ks_exported_in_woo', '=', False)]}"/>
+                                <field name="ks_sync_date"/>
+                            <field name="ks_last_exported_date"/>
+                            </group>
+                        </group>
+                        <group name="woo_coupons">
+                                <field name="ks_woo_coupons" readonly="1" widget="many2many_tags"
+                                       attrs="{'invisible':[('ks_woo_coupons','=',False)]}"
+                                       string="WooCommerce Coupons"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+       </record>
+
+    <!-- Tree view for Woo Customers-->
+    <record id="ks_tree_woocommerce_orders" model="ir.ui.view">
+        <field name="name">ks.woo.sale.orders.tree.view</field>
+        <field name="model">sale.order</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="ks_woo_instance_id"/>
+                    <field name="ks_woo_id"/>
+                    <field name="ks_exported_in_woo" />
+            </xpath>
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="ks_sync_status"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_status']" position="before">
+                <field name="ks_woo_status"/>
+            </xpath>
+            <xpath expr="//field[@name='confirmation_date']" position="after">
+                <field name="date_order"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-warning">ks_woo_status == 'on-hold'</attribute>
+                <attribute name="decoration-muted">ks_woo_status in ['cancelled', 'pending']</attribute>
+                <attribute name="decoration-success">ks_woo_status == 'processing'</attribute>
+                <attribute name="decoration-info">ks_woo_status == 'completed'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ks_sale_order_search_view" model="ir.ui.view">
+        <field name="name">ks.sale.order.search.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='activities_my']" position="before">
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <filter string="Today Created Woo Orders" name="woo_created_today"
+                domain="[('ks_date_created','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('ks_date_created','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+                <filter string="Today Updated Woo Orders" name="woo_created_today"
+                domain="[('ks_date_updated','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('ks_date_updated','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                    <filter string="Woo Status" name="ks_woo_status" context="{'group_by':'ks_woo_status'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+<!--    Action window for Woo Orders-->
+    <record model="ir.actions.act_window" id="action_woocommerce_sale_order">
+        <field name="name">WooCommerce Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('ks_woo_id','&gt;',0)]</field>
+        <field name="context">{'tree_view_ref': 'ks_woocommerce.ks_tree_woocommerce_orders' }</field>
+    </record>
+
+    <menuitem id="menu_ks_woocomerce_order"
+              name="Orders"
+              parent="menu_ks_woocomerce_base"
+              sequence="3"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+    <menuitem id="menu_ks_woocomerce_orders"
+              name="Orders"
+              parent="menu_ks_woocomerce_order"
+              action="action_woocommerce_sale_order"
+              sequence="0"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+
+
+</odoo>

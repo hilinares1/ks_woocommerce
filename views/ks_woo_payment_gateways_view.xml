@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_woocommerce_payment_gateways">
+        <field name="name">WooCommerce Payment Gateways</field>
+        <field name="res_model">ks.woo.payment.gateway</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ks_woocomerce_payment_gateways"
+              name="Payment Gateways"
+              parent="menu_ks_woocomerce_base"
+              action="action_woocommerce_payment_gateways"
+              sequence="5"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+    <record model="ir.ui.view" id="view_ks_woo_payment_gateway_form">
+        <field name="name">ks.woo.payment.gateway.form</field>
+        <field name="model">ks.woo.payment.gateway</field>
+        <field name="arch" type="xml">
+            <form string="Woo Product Tags" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ks_title"/>
+                            <field name="ks_woo_pg_id"/>
+                        </group>
+                        <group>
+                            <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_woo_pg_id','!=',False)]}"/>
+                            <field name="ks_journal_id"/>
+                        </group>
+                    </group>
+                    <group string="Description" attrs="{'invisible':[('ks_description','=',False)]}">
+                        <field name="ks_description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_ks_woo_payment_gateway_tree">
+        <field name="name">ks.woo.payment.gateway.tree</field>
+        <field name="model">ks.woo.payment.gateway</field>
+        <field name="arch" type="xml">
+            <tree string="Woo Payment Gateways" create="0">
+                <field name="ks_title"/>
+                <field name="ks_woo_pg_id"/>
+                <field name="ks_woo_instance_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ks_woo_payment_gateway_search_view" model="ir.ui.view">
+        <field name="name">ks.woo.payment.gateway.search</field>
+        <field name="model">ks.woo.payment.gateway</field>
+        <field name="arch" type="xml">
+            <search string="Product">
+                <field name="ks_title" string="Title" filter_domain="[('ks_title','ilike',self)]"/>
+                <field name="ks_woo_pg_id" string="Payment code" filter_domain="[('ks_woo_pg_id','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+
+
+</odoo>

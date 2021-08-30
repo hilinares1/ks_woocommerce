@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ks_woo_instance_operation_form_view" model="ir.ui.view">
+            <field name="name">ks.woo.instance.operation.view</field>
+            <field name="model">ks.woo.instance.operation</field>
+            <field name="arch" type="xml">
+                <form string="Woo Instance Operation">
+                    <sheet>
+                        <group>
+                            <field name="ks_woo_instances" widget="many2many_tags"
+                                   options="{'no_open': True, 'no_create': True}" required="1"
+                                   readonly="context.get('default_woo_instance')"
+                                   domain="[('ks_instance_state','=', 'active')]"/>
+                        </group>
+                        <notebook>
+                            <page name="ks_woo_to_odoo" string="Woo to Odoo">
+                                <group>
+                                    <group>
+                                        <field name="ks_sync_all_w2o" widget="boolean_toggle"/>
+                                    </group>
+                                    <group>
+                                        <field name="ks_date_filter" widget="boolean_toggle"
+                                               attrs="{'invisible': [('ks_sync_products', '=', False), ('ks_sync_customers', '=', False),('ks_sync_orders', '=', False)]}"/>
+                                        <field name="ks_date_from"
+                                               attrs="{'invisible': [('ks_date_filter', '=', False)]}"/>
+                                        <field name="ks_date_to"
+                                               attrs="{'invisible': [('ks_date_filter', '=', False)]}"/>
+                                        <field name="ks_date_filter_info" nolabel="1"
+                                               attrs="{'invisible': [('ks_date_filter', '=', False)]}"/>
+                                    </group>
+                                </group>
+                                <group string="Product Operations">
+                                    <group>
+                                        <field name="ks_sync_attributes" widget="boolean_toggle"/>
+                                        <field name="ks_sync_product_tags" widget="boolean_toggle"/>
+                                        <field name="ks_sync_product_category" widget="boolean_toggle"/>
+                                    </group>
+                                    <group>
+                                        <field name="ks_sync_products" widget="boolean_toggle"/>
+                                        <field name="ks_import_stock" widget="boolean_toggle"/>
+                                        <button string="Update Inventory" name="ks_update_stock_wizard" type="object"
+                                                class="btn-primary"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Customer Operations">
+                                        <field name="ks_sync_customers" widget="boolean_toggle"/>
+                                    </group>
+                                    <group string="Order Operations">
+                                        <field name="ks_sync_orders" widget="boolean_toggle"/>
+                                        <field name="ks_sync_coupons" widget="boolean_toggle"/>
+                                        <field name="ks_sync_payment_gateways" widget="boolean_toggle"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="ks_odoo_to_woo" string="Odoo to Woo">
+                                <group>
+                                    <group string="Product Operations">
+                                        <field name="ks_update_products" widget="boolean_toggle"/>
+                                        <field name="ks_update_attributes" widget="boolean_toggle"/>
+                                        <field name="ks_update_tags" widget="boolean_toggle"/>
+                                        <field name="ks_update_category" widget="boolean_toggle"/>
+                                    </group>
+                                    <group string="Other Operations">
+                                        <field name="ks_update_stock" widget="boolean_toggle"/>
+                                        <field name="ks_publish_products"
+                                               attrs="{'invisible': [('ks_unpublish_products','=',True)]}" widget="boolean_toggle"/>
+                                        <field name="ks_unpublish_products"
+                                               attrs="{'invisible': [('ks_publish_products','=',True)]}" widget="boolean_toggle"
+                                        />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Customer Operations">
+                                        <field name="ks_update_customers" widget="boolean_toggle"/>
+                                    </group>
+                                    <group string="Order Operations">
+                                        <field name="ks_update_order_status" widget="boolean_toggle"/>
+                                        <field name="ks_update_coupons" widget="boolean_toggle"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+
+                        <footer>
+                            <button string="Execute" name="ks_execute_operation" type="object" class="btn-primary"/>
+                            <button string="Close" class="btn-primary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_woo_instance_operation_wizard" model="ir.actions.act_window">
+            <field name="name">WooCommerce Operations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ks.woo.instance.operation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_ks_woocomerce_operations"
+                  name="Operations"
+                  parent="menu_ks_woocomerce_base"
+                  action="open_woo_instance_operation_wizard"
+                  sequence="6"
+                  groups="ks_woocommerce.ks_woocommerce_group"
+        />
+
+
+    </data>
+</odoo>

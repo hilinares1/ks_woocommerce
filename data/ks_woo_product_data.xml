@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="ks_woo_fees" model="product.product">
+            <field name="name">WooCommerce Fees</field>
+            <field name="type">service</field>
+            <field name="list_price">0.0</field>
+        </record>
+        <record id="ks_woo_shipping_fees" model="product.product">
+            <field name="name">Shipping Fees</field>
+            <field name="type">service</field>
+            <field name="list_price">0.0</field>
+        </record>
+    </data>
+
+    <!--        To remove woo from old database Woo Shipping Fees-->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'ks_woocommerce'), ('name', '=', 'ks_woo_shipping_fees')]"
+            />
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+
+
+    <record id="ks_woocommerce.ks_woo_shipping_fees" model="product.product">
+        <field name="name">Shipping Fees</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+    </record>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'ks_woocommerce'), ('name', '=', 'ks_woo_shipping_fees')]"
+            />
+        </function>
+        <value eval="{'noupdate': True}"/>
+    </function>
+</odoo>

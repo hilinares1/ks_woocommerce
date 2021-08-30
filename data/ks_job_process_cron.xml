@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ks_ir_cron_job_process" model="ir.cron">
+        <field name="name">WooCommerce Queue Job Process</field>
+        <field name="model_id" ref="model_ks_woo_queue_jobs"/>
+        <field name="state">code</field>
+        <field name="code">model.ks_process_queue_jobs()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+    </record>
+
+</odoo>

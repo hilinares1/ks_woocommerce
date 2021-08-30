@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_woocommerce_product_tags">
+        <field name="name">WooCommerce Product Tags</field>
+        <field name="res_model">ks.woo.product.tag</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ks_woocomerce_product_tags"
+              name="Tags"
+              parent="menu_ks_woocomerce_products"
+              action="action_woocommerce_product_tags"
+              sequence="0"
+              groups="ks_woocommerce.ks_woocommerce_group"
+    />
+
+    <record model="ir.ui.view" id="view_ks_woo_product_tags_form">
+        <field name="name">ks.woo.product.tag.form</field>
+        <field name="model">ks.woo.product.tag</field>
+        <field name="arch" type="xml">
+            <form string="Woo Product Tags">
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                <field name="ks_sync_status" invisible="1"/>
+                        <button name="" class="oe_stat_button" disabled="True"
+                                attrs="{'invisible': [('ks_sync_status', '=', False)]}" icon="fa-check text-success">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Synchronised</span>
+                                <span class="o_stat_text">With Woo</span>
+                            </div>
+                        </button>
+                <button name="" class="oe_stat_button" disabled="True"
+                        attrs="{'invisible': [('ks_sync_status', '=', True )]}" icon="fa-times-circle text-danger">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">UnSynchronised</span>
+                        <span class="o_stat_text">With Woo</span>
+                    </div>
+                </button>
+            </div>
+                    <group name="tag_info">
+                        <group>
+                            <field name="ks_name"/>
+                        </group>
+                        <group>
+                            <field name="ks_slug" attrs="{'readonly':[('ks_export_in_woo','!=',False)]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="woo_other_info" string="Other Information">
+                            <group>
+                                <group>
+                                    <field name="ks_woo_instance_id" options="{'no_create':True,'no_create_edit': True}" attrs="{'readonly':[('ks_export_in_woo','!=',False)]}"/>
+                                    <field name="ks_sync_date"/>
+                                <field name="ks_last_exported_date"/>
+                                </group>
+                                <group>
+                                    <field name="ks_woo_id" attrs="{'invisible':[('ks_export_in_woo','=',False)]}"/>
+                                    <field name="ks_export_in_woo" attrs="{'invisible':[('ks_export_in_woo','=',False)]}"/>
+                                </group>
+                            </group>
+                            <group string="Description">
+                                <field name="ks_description" nolabel="1" placeholder="This note will show up on product tag description"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_ks_woo_product_tags_tree">
+        <field name="name">ks.woo.product.tag.form</field>
+        <field name="model">ks.woo.product.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Woo Product Tags">
+                <field name="ks_name"/>
+                <field name="ks_slug"/>
+                <field name="ks_woo_instance_id"/>
+                <field name="ks_woo_id"/>
+                <field name="ks_export_in_woo"/>
+                <field name="ks_sync_status" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="woocommerce_product_tag_search_view" model="ir.ui.view">
+        <field name="name">ks.woo.product.tag.search</field>
+        <field name="model">ks.woo.product.tag</field>
+        <field name="arch" type="xml">
+            <search string="Product">
+                <field name="ks_name" string="Name" filter_domain="[('ks_name','ilike',self)]"/>
+                <field name="ks_slug" string="Woo Slug" filter_domain="[('ks_slug','ilike',self)]"/>
+                <field name="ks_woo_instance_id" string="Woo Instance Id" filter_domain="[('ks_woo_instance_id','ilike',self)]"/>
+                <field name="ks_woo_id" string="Woo Id" filter_domain="[('ks_woo_id','ilike',self)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Woo Instance Id" name="ks_woo_instance_id" context="{'group_by':'ks_woo_instance_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <!--    Action for Exporting and Updating Product Tag from Odoo to Woo-->
+    <record id="ks_update_woocommerce_product_tag" model="ir.actions.server">
+        <field name="name">Export/Update Tags</field>
+        <field name="model_id" ref="model_ks_woo_product_tag"/>
+        <field name="binding_model_id" ref="model_ks_woo_product_tag"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_tag_to_woo_wizard()
+        </field>
+    </record>
+
+    <record id="ks_import_woocommerce_product_tag" model="ir.actions.server">
+        <field name="name">Import Tags</field>
+        <field name="model_id" ref="model_ks_woo_product_tag"/>
+        <field name="binding_model_id" ref="model_ks_woo_product_tag"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.ks_update_product_tag_to_odoo_wizard()
+        </field>
+    </record>
+
+</odoo>
